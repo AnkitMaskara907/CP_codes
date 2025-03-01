@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "ios": "cpp",
+        "iostream": "cpp",
+        "set": "cpp",
+        "exception": "cpp",
+        "random": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.intelliSenseEngineFallback": "disabled"
+}

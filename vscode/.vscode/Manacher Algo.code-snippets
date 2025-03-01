@@ -1,0 +1,39 @@
+{
+	"Manacher Algo": {
+	"prefix": "Manacher",
+	"body": [
+	  "struct manacher{",
+	  "    vector<int>p;",
+	  "    void run_manacher(string s){",
+	  "        int n=s.length();",
+	  "        p.assign(n,1ll);",
+	  "        int l=0,r=2;",
+	  "        for(int i=1;i<n;i++){",
+	  "            p[i]=max(1ll,min(r-i,p[l+r-i]));",
+	  "            while((i-p[i]>=0)&&(i+p[i]<n)&&(s[i-p[i]]==s[i+p[i]]))",
+	  "                p[i]++;",
+	  "            if(i+p[i]>r)",
+	  "                r=i+p[i],l=i-p[i];",
+	  "        }",
+	  "            ",
+	  "    }",
+	  "    void build(string s){",
+	  "        string t;",
+	  "        for(char x:s){",
+	  "            t+=string(\"#\")+x;",
+	  "        }",
+	  "        run_manacher(t+\"#\");",
+	  "    }",
+	  "    int getLongest(int c,bool odd){",
+	  "        int ind=2*c+1+(!odd);",
+	  "        return p[ind]-1;",
+	  "    }",
+	  "    bool isPalin(int l,int r){",
+	  "        // //cerr<<getLongest((l+r)/2,(l%2==r%2))<<\"\\n\";",
+	  "        return ((r-l+1)<=getLongest((l+r)/2,(l%2==r%2)));",
+	  "    }",
+	  "};"
+	],
+	"description": "Manacher Algo"
+  }
+}
